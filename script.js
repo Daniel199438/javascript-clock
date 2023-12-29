@@ -1,4 +1,5 @@
-const rotateMin = date => {
+
+function rotateMinute(date) {
     const minuteHand = document.getElementById('minute');
     let secVal = date.getSeconds(),
         degFromSeconds = .1 * secVal,
@@ -7,7 +8,19 @@ const rotateMin = date => {
     minuteHand.style.transform = `rotate(${(minuteVal*6)+degFromSeconds}deg)`;
 
     rotateHour(date, minuteVal);
+
 }
+
+function rotateSecond(date) {
+    const secondHand = document.getElementById('second');
+    let secondVal = date.getSeconds();
+
+    secondHand.style.transform = `rotate(${secondVal*6}deg)`;
+
+    rotateMinute(date);
+}
+
+
 
 const rotateHour = (date, minuteVal) => {
     const hourHand = document.getElementById('hour');
@@ -113,8 +126,8 @@ const switchTempScale = () => {
 window.addEventListener("load", () => {
     setInterval(() => {
         let dd = new Date();
-        rotateMin(dd);
-    }, 100);
+        rotateSecond(dd)
+    }, 1000);
     let dd = new Date();
     displayDate(dd);
     printWeatherInfo();

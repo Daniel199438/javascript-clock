@@ -14,7 +14,7 @@ body{
     height: 100vh;
     background-color: var(--bgColor);
     overflow: auto;
-    display: grid;
+    display: block;
     place-items: center;
 }
 #container {
@@ -158,6 +158,21 @@ body{
     min-height: 100px;
     box-shadow: 2px 2px 10px rgba(0,0,0,.5);
 }
+
+#second-hand {
+    height: 16vw;
+    min-height: 230px;
+}
+#second {
+    width: 2px;
+    height: 8vw;
+    background-color: #fff;
+    border-radius: 5px;
+    transform-origin: bottom center;
+    min-height: 115px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+}
+
 /* end clock styling */
 
 #date-info {
